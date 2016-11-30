@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#303030">
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/startdate"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/hours"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_marginBottom="50dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/enddate"
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="to"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/startdate"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="HOURS WORKED"
+        android:id="@+id/hours"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="DAYS WORKED"
+        android:id="@+id/days"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_below="@+id/hours"
+        android:layout_alignStart="@+id/hours"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>

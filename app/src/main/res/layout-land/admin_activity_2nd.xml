@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK IN"
+        android:id="@+id/clockin"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_marginTop="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/clockout" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK OUT"
+        android:id="@+id/clockout"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_below="@+id/clockin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="ADJUST HOURS"
+        android:id="@+id/adjust"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_below="@+id/clockout"
+        android:layout_alignStart="@+id/clockout"
+        android:layout_marginTop="28dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCH"
+        android:id="@+id/search"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_below="@+id/adjust"
+        android:layout_alignStart="@+id/adjust"
+        android:layout_marginTop="36dp"
+        android:layout_alignEnd="@+id/adjust" />
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK IN"
+        android:id="@+id/clockin"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_above="@+id/clockout"
+        android:layout_marginBottom="42dp"
+        android:layout_alignStart="@+id/clockout"
+        android:layout_alignEnd="@+id/clockout" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK OUT"
+        android:id="@+id/clockout"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCH"
+        android:id="@+id/search"
+        android:layout_marginTop="47dp"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:layout_below="@+id/clockout"
+        android:layout_alignStart="@+id/clockout"
+        android:layout_alignEnd="@+id/clockout" />
+</RelativeLayout>
