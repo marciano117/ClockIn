@@ -9,7 +9,7 @@ import android.widget.Toast;
 import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
-
+    public final static String USERNAME = "com.example.shameemah1.clockin.MESSAGE";
     EditText loginUsername;
     EditText loginPassword;
 
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         password = loginPassword.getText().toString();
 
         if (name1.equals(username) && pass1.equals(password)) {
-            adminIntent.putExtra("username", username);
+            adminIntent.putExtra(USERNAME, username);
             startActivity(adminIntent);
         } else if (name2.equals(username) && pass2.equals(password)) {
-            userIntent.putExtra("username", username);
+            userIntent.putExtra(USERNAME, username);
             startActivity(userIntent);
         } else if (name3.equals(username) && pass2.equals(password)) {
-            userIntent.putExtra("username", username);
+            userIntent.putExtra(USERNAME, username);
             startActivity(userIntent);
         } else {
             Toast.makeText(getApplicationContext(), "Login Failed!", Toast.LENGTH_SHORT).show();
