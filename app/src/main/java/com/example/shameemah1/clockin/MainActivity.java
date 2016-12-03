@@ -8,17 +8,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.app.Activity;
 
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     public final static String USERNAME = "com.example.shameemah1.clockin.MESSAGE";
     EditText loginUsername;
     EditText loginPassword;
 
-    private String name1 = "admin";
-    private String name2 = "Peter";
-    private String name3 = "Justin";
-    private String pass1 = "password";
-    private String pass2 = "Marciano";
-    private String pass3 = "Kvedaras";
+    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+
+    public User admin = new User(0, "admin", "password", 0);
+    public User peter = new User(1, "Peter", "Marciano", 0);
+    public User justin = new User(1, "Justin", "Kvedaras", 0);
 
     String username = "";
     String password = "";
@@ -28,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final SqlHelper db = new SqlHelper(this);
+        //admin.punches.add(currentDateTimeString);
+        //System.out.println(admin.punches.get(0));
 
-        /* ADD USERS LATER
+        /* DATABASE LINES
+        SqlHelper db = new SqlHelper(this);
         db.addUser(new User(0, "John", "Doe", 100));    //Level 100 will have admin
         db.addUser(new User(0, "Jane", "Smith", 200));  //Level 200 will NOT have admin
         db.addUser(new User(0, "Michael", "Jordan", 200));  //Level 200 will NOT have admin
@@ -38,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         loginUsername = (EditText) findViewById(R.id.username);
         loginPassword = (EditText) findViewById(R.id.password);
-
     }
 
     public void loginClick(View view) {
@@ -47,15 +51,27 @@ public class MainActivity extends AppCompatActivity {
         username = loginUsername.getText().toString();
         password = loginPassword.getText().toString();
 
-        if (name1.equals(username) && pass1.equals(password)) {
+        if (admin.getUser().equals(username) && admin.getPass().equals(password)) {
             adminIntent.putExtra(USERNAME, username);
-            startActivity(adminIntent);
-        } else if (name2.equals(username) && pass2.equals(password)) {
+            if (admin.getLevel() == 0) {
+                startActivity(adminIntent);
+            } else {
+                startActivity(userIntent);
+            }
+        } else if (peter.getUser().equals(username) && peter.getPass().equals(password)) {
             userIntent.putExtra(USERNAME, username);
-            startActivity(userIntent);
-        } else if (name3.equals(username) && pass2.equals(password)) {
+            if (peter.getLevel() == 0) {
+                startActivity(adminIntent);
+            } else {
+                startActivity(userIntent);
+            }
+        } else if (justin.getUser().equals(username) && justin.getPass().equals(password)) {
             userIntent.putExtra(USERNAME, username);
-            startActivity(userIntent);
+            if (justin.getLevel() == 0) {
+                startActivity(adminIntent);
+            } else {
+                startActivity(userIntent);
+            }
         } else {
             Toast.makeText(getApplicationContext(), "Login Failed!", Toast.LENGTH_SHORT).show();
             //Login Failed

@@ -38,7 +38,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 // create books table
         db.execSQL(CREATE_USER_TABLE);
         Log.d("Created Table", "Created Table" + TABLE_USERS);
-        db.close();
+        //db.close();
 
     }
 
@@ -73,9 +73,9 @@ public class SqlHelper extends SQLiteOpenHelper {
         final int KEY_UID= user.getId();
         final String KEY_USER = user.getUser();
 
-        String CREATE_INDIVIDUAL_TABLE = "CREATE TABLE " + KEY_USER + "( " +
+        String CREATE_INDIVIDUAL_TABLE = "CREATE TABLE " + KEY_USER + " ( " +
                 KEY_UID + " INTEGER PRIMARY KEY AUTO_INCREMENT, " + KEY_USER + " TEXT, " +
-                "Punch In LONG, Punch Out LONG);";      //Timestamp saved as a long
+                "Punch In LONG, Punch Out LONG";      //Timestamp saved as a long
 
 
 // create table for each user
