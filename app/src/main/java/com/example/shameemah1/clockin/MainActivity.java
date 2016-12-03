@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 
-    public User admin = new User(0, "admin", "password", 0);
-    public User peter = new User(1, "Peter", "Marciano", 0);
-    public User justin = new User(1, "Justin", "Kvedaras", 0);
+    public User admin = new User(1, "admin", "password", 0);
+    public User peter = new User(2, "Peter", "Marciano", 1);
+    public User justin = new User(3, "Justin", "Kvedaras", 1);
 
     String username = "";
     String password = "";
@@ -52,24 +52,33 @@ public class MainActivity extends AppCompatActivity {
         password = loginPassword.getText().toString();
 
         if (admin.getUser().equals(username) && admin.getPass().equals(password)) {
-            adminIntent.putExtra(USERNAME, username);
             if (admin.getLevel() == 0) {
+                adminIntent.putExtra(USERNAME, username);
+                adminIntent.putExtra("user", (User)admin);
                 startActivity(adminIntent);
             } else {
+                userIntent.putExtra(USERNAME, username);
+                userIntent.putExtra("user", (User)admin);
                 startActivity(userIntent);
             }
         } else if (peter.getUser().equals(username) && peter.getPass().equals(password)) {
-            userIntent.putExtra(USERNAME, username);
             if (peter.getLevel() == 0) {
+                adminIntent.putExtra(USERNAME, username);
+                adminIntent.putExtra("user", (User)peter);
                 startActivity(adminIntent);
             } else {
+                userIntent.putExtra(USERNAME, username);
+                userIntent.putExtra("user", (User)peter);
                 startActivity(userIntent);
             }
         } else if (justin.getUser().equals(username) && justin.getPass().equals(password)) {
-            userIntent.putExtra(USERNAME, username);
             if (justin.getLevel() == 0) {
+                adminIntent.putExtra(USERNAME, username);
+                adminIntent.putExtra("user", (User)justin);
                 startActivity(adminIntent);
             } else {
+                userIntent.putExtra(USERNAME, username);
+                userIntent.putExtra("user", (User)justin);
                 startActivity(userIntent);
             }
         } else {

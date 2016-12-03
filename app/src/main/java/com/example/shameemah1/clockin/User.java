@@ -1,12 +1,13 @@
 package com.example.shameemah1.clockin;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by JJ on 11/22/2016.
  */
 
-public class User {
+public class User implements Serializable{
 
     private int id;
     private String username;

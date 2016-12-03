@@ -5,49 +5,49 @@
     android:background="#303030">
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="CLOCK IN"
-        android:id="@+id/clockin"
-        android:textSize="20dp"
-        android:backgroundTint="#80cbc4"
-        android:layout_above="@+id/clockout"
-        android:layout_marginBottom="42dp"
-        android:layout_alignStart="@+id/clockout"
-        android:layout_alignEnd="@+id/clockout"
-        android:onClick="clockIn"/>
-
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="CLOCK OUT"
-        android:id="@+id/clockout"
-        android:textSize="20dp"
-        android:backgroundTint="#80cbc4"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="clockOut"/>
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEARCH"
         android:id="@+id/search"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="50dp"
         android:textSize="20dp"
         android:backgroundTint="#80cbc4"
-        android:layout_below="@+id/clockout"
-        android:layout_alignStart="@+id/clockout"
-        android:layout_alignEnd="@+id/clockout"
-        android:onClick="search"/>
+        android:onClick="search"
+        android:layout_below="@+id/clockOut"
+        android:layout_alignStart="@+id/clockOut"
+        android:layout_alignEnd="@+id/clockOut" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/clockin"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="54dp"
         android:id="@+id/username"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/clockIn" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK OUT"
+        android:id="@+id/clockOut"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:onClick="clockOut"
+        android:layout_marginTop="156dp"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="CLOCK IN"
+        android:id="@+id/clockIn"
+        android:textSize="20dp"
+        android:backgroundTint="#80cbc4"
+        android:onClick="clockIn"
+        android:layout_below="@+id/username"
+        android:layout_alignStart="@+id/clockOut"
+        android:layout_marginTop="48dp" />
 </RelativeLayout>
