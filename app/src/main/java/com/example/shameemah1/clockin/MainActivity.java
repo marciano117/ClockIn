@@ -1,10 +1,16 @@
 package com.example.shameemah1.clockin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText loginUsername;
+    EditText loginPassword;
 
     private String name1 = "admin";
     private String name2 = "Peter";
@@ -13,13 +19,37 @@ public class MainActivity extends AppCompatActivity {
     private String pass2 = "Marciano";
     private String pass3 = "Kvedaras";
 
+    String username = "";
+    String password = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText loginUsername = (EditText) findViewById(R.id.username);
-        EditText loginPassword = (EditText) findViewById(R.id.password);
+        loginUsername = (EditText) findViewById(R.id.username);
+        loginPassword = (EditText) findViewById(R.id.password);
 
+    }
+
+    public void loginClick(View view) {
+        Intent userIntent = new Intent(this, UserActivity2.class);
+        Intent adminIntent = new Intent(this, AdminActivity2.class);
+        username = loginUsername.getText().toString();
+        password = loginPassword.getText().toString();
+
+        if (name1.equals(username) && pass1.equals(password)) {
+            adminIntent.putExtra("username", username);
+            startActivity(adminIntent);
+        } else if (name2.equals(username) && pass2.equals(password)) {
+            userIntent.putExtra("username", username);
+            startActivity(userIntent);
+        } else if (name3.equals(username) && pass2.equals(password)) {
+            userIntent.putExtra("username", username);
+            startActivity(userIntent);
+        } else {
+            Toast.makeText(getApplicationContext(), "Login Failed!", Toast.LENGTH_SHORT).show();
+            //Login Failed
+        }
     }
 }
