@@ -3,6 +3,7 @@ package com.example.shameemah1.clockin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 /**
@@ -26,16 +27,16 @@ public class UserActivity2 extends AppCompatActivity{
 
         //
     }
-    public void clockIn (){
+    public void clockIn (View view){
         //event listener.
         //Code to execute when user clocks in
 
     }
-    public void clockOut (){
+    public void clockOut (View view){
         //event listener
         //code to execute when user clocks out
     }
-    public void search (){
+    public void search (View view){
         //sends user to search activity to go through hours worked
 
     }
