@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Also contains a button for sending user to an activity to search for time worked
  */
 
-public class UserActivity2 extends AppCompatActivity{
+public class UserActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class UserActivity2 extends AppCompatActivity{
         setContentView(R.layout.user_activity_2nd);
 
         //get user information from login page
-        Intent intent = getIntent();
+        Intent intent = this.getIntent();
         //String username = intent.getStringExtra(MainActivity.username);
 
 
