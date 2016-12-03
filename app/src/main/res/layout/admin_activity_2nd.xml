@@ -14,7 +14,8 @@
         android:backgroundTint="#80cbc4"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/adjust"
-        android:layout_alignEnd="@+id/adjust" />
+        android:layout_alignEnd="@+id/adjust"
+        android:onClick="clockIn"/>
 
     <Button
         android:layout_width="300dp"
@@ -26,7 +27,8 @@
         android:layout_below="@+id/clockin"
         android:layout_alignStart="@+id/clockin"
         android:layout_alignEnd="@+id/adjust"
-        android:backgroundTint="#80cbc4" />
+        android:backgroundTint="#80cbc4"
+        android:onClick="clockOut"/>
 
     <Button
         android:layout_width="300dp"
@@ -37,7 +39,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:textSize="20dp"
-        android:backgroundTint="#80cbc4" />
+        android:backgroundTint="#80cbc4"
+        android:onClick="adjust"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -49,5 +52,6 @@
         android:layout_below="@+id/adjust"
         android:layout_alignStart="@+id/adjust"
         android:layout_alignEnd="@+id/adjust"
-        android:backgroundTint="#80cbc4" />
+        android:backgroundTint="#80cbc4"
+        android:onClick="search"/>
 </RelativeLayout>
