@@ -21,6 +21,8 @@ public class UserActivity2 extends AppCompatActivity{
 
         //get user information from login page
         Intent intent = getIntent();
+        //String username = intent.getStringExtra(MainActivity.username);
+
 
         //
     }
