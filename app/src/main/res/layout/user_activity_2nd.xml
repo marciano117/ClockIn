@@ -48,5 +48,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/clockin"
         android:layout_marginTop="47dp"
-        android:id="@+id/username" />
+        android:id="@+id/username"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 </RelativeLayout>
