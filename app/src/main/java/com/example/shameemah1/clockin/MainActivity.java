@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.app.Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final SqlHelper db = new SqlHelper(this);
+
+        /* ADD USERS LATER
+        db.addUser(new User(0, "John", "Doe", 100));    //Level 100 will have admin
+        db.addUser(new User(0, "Jane", "Smith", 200));  //Level 200 will NOT have admin
+        db.addUser(new User(0, "Michael", "Jordan", 200));  //Level 200 will NOT have admin
+        */
 
         loginUsername = (EditText) findViewById(R.id.username);
         loginPassword = (EditText) findViewById(R.id.password);
