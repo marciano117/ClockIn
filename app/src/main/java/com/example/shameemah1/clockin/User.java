@@ -74,8 +74,9 @@ public class User implements Serializable{
         }
 
         for (int i=0; i<arrSize; i=i+2) {
-            totalHoursLong = punches.get(cursor+1) - punches.get(cursor);
+            totalHoursLong = totalHoursLong + (punches.get(cursor+1) - punches.get(cursor));
             System.out.println(totalHoursLong);
+            cursor = cursor+2;
         }
 
         totalHoursLong = totalHoursLong / (60 * 60 * 1000);
@@ -96,8 +97,9 @@ public class User implements Serializable{
         }
 
         for (int i=0; i<arrSize; i=i+2) {
-            totalHoursLong = punches.get(cursor+1) - punches.get(cursor);
+            totalHoursLong = totalHoursLong + (punches.get(cursor+1) - punches.get(cursor));
             System.out.println(totalHoursLong);
+            cursor = cursor+2;
         }
 
         totalHoursLong = totalHoursLong / (60 * 1000);

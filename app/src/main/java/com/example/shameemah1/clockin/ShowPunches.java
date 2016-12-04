@@ -3,9 +3,12 @@ package com.example.shameemah1.clockin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import static com.example.shameemah1.clockin.MainActivity.USERNAME;
 
@@ -41,7 +44,14 @@ public class ShowPunches extends AppCompatActivity {
         TextView minutesTitle = (TextView) findViewById(R.id.showPunchMinutes);
         minutesTitle.setText(user.getMinutes());
 
-        listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, user.punches);
+        ArrayList<CharSequence> arr = new ArrayList<CharSequence>();
+        System.out.println(arr.size());
+        for (int i=0; i<user.punches.size(); i++) {
+            System.out.println(user.punches.get(i));
+            arr.add(DateFormat.format("HH:mm:ss", user.punches.get(i)));
+        }
+
+        listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
         listView.setAdapter(listAdapter);
     }
 }

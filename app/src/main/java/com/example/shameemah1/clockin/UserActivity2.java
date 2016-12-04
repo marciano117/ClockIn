@@ -61,7 +61,8 @@ public class UserActivity2 extends AppCompatActivity{
             currentDateTimeString = System.currentTimeMillis();
             user.punches.add(currentDateTimeString);
             Toast.makeText(getApplicationContext(), "Clocked out successfully!", Toast.LENGTH_SHORT).show();
-            System.out.println("Clocked in successfully!");
+            System.out.println("Clocked out successfully!");
+            System.out.println(currentDateTimeString);
             punchCoin = 0;
         } else {
             Toast.makeText(getApplicationContext(), "Please clock in first!", Toast.LENGTH_SHORT).show();
