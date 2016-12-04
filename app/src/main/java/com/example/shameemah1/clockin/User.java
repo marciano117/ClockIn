@@ -27,26 +27,37 @@ public class User implements Serializable{
     public User(int id){
         this.id = id;
     }
+
     //getters & setters
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getUser() {
         return username;
     }
+
     public void setUser(String username) {
         this.username = username;
     }
+
     public String getPass() {
         return password;
     }
-    public void setPass(String password) {this.password = password;}
+
+    public void setPass(String password) {
+        this.password = password;
+    }
+
     public int getLevel(){
         return level;
     }
+
     public void setLevel(int level){
         this.level = level;
     }

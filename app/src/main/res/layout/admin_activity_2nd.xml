@@ -7,51 +7,25 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="CLOCK IN"
-        android:id="@+id/clockin"
-        android:layout_marginTop="105dp"
-        android:textSize="20dp"
-        android:backgroundTint="#80cbc4"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/adjust"
-        android:layout_alignEnd="@+id/adjust"
-        android:onClick="clockIn"/>
-
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="CLOCK OUT"
-        android:id="@+id/clockout"
-        android:layout_marginTop="42dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/clockin"
-        android:layout_alignStart="@+id/clockin"
-        android:layout_alignEnd="@+id/adjust"
-        android:backgroundTint="#80cbc4"
-        android:onClick="clockOut"/>
-
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="ADJUST HOURS"
+        android:text="View employee punches"
         android:id="@+id/adjust"
-        android:layout_below="@+id/clockout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
         android:textSize="20dp"
         android:backgroundTint="#80cbc4"
-        android:onClick="adjust"/>
+        android:onClick="viewPunches"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="179dp" />
 
-    <Button
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEARCH"
-        android:id="@+id/search"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/adjust"
+        android:inputType="textPersonName"
+        android:text="USERNAME"
+        android:ems="10"
+        android:layout_above="@+id/adjust"
         android:layout_alignStart="@+id/adjust"
-        android:layout_alignEnd="@+id/adjust"
-        android:backgroundTint="#80cbc4"
-        android:onClick="search"/>
+        android:layout_marginBottom="134dp"
+        android:id="@+id/searchUser"
+        android:layout_alignEnd="@+id/adjust" />
+
 </RelativeLayout>
