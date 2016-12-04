@@ -7,7 +7,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEARCH"
+        android:text="view punches"
         android:id="@+id/search"
         android:layout_marginTop="50dp"
         android:textSize="20dp"
@@ -25,7 +25,8 @@
         android:id="@+id/username"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/clockIn" />
+        android:layout_alignStart="@+id/clockIn"
+        android:textColor="#ffffff"/>
 
     <Button
         android:layout_width="300dp"

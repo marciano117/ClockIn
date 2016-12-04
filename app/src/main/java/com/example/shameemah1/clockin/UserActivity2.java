@@ -26,6 +26,7 @@ public class UserActivity2 extends AppCompatActivity{
 
     Intent intent;
     User user;
+    public int punchCoin = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +43,30 @@ public class UserActivity2 extends AppCompatActivity{
     }
 
     public void clockIn (View view){
-        currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        user.punches.add(currentDateTimeString);
-        Toast.makeText(getApplicationContext(), "Clocked in successfully!", Toast.LENGTH_SHORT).show();
+        if (punchCoin == 0) {
+            currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+            user.punches.add(currentDateTimeString);
+            Toast.makeText(getApplicationContext(), "Clocked in successfully!", Toast.LENGTH_SHORT).show();
+            System.out.println("Clocked in successfully!");
+            punchCoin = 1;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please clock out first!", Toast.LENGTH_SHORT).show();
+            System.out.println("Please clock out first!");
+        }
     }
 
     public void clockOut (View view){
-        currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        user.punches.add(currentDateTimeString);
-        Toast.makeText(getApplicationContext(), "Clocked out successfully!", Toast.LENGTH_SHORT).show();
+        if (punchCoin == 1) {
+            currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+            user.punches.add(currentDateTimeString);
+            Toast.makeText(getApplicationContext(), "Clocked out successfully!", Toast.LENGTH_SHORT).show();
+            System.out.println("Clocked in successfully!");
+            punchCoin = 0;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please clock in first!", Toast.LENGTH_SHORT).show();
+            System.out.println("Please clock in first!");
+        }
+
     }
 
     public void search (View view){
