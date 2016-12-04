@@ -22,7 +22,7 @@ import static com.example.shameemah1.clockin.MainActivity.USERNAME;
 
 public class UserActivity2 extends AppCompatActivity{
 
-    String currentDateTimeString;
+    long currentDateTimeString;
 
     Intent intent;
     User user;
@@ -44,10 +44,11 @@ public class UserActivity2 extends AppCompatActivity{
 
     public void clockIn (View view){
         if (punchCoin == 0) {
-            currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+            currentDateTimeString = System.currentTimeMillis();
             user.punches.add(currentDateTimeString);
             Toast.makeText(getApplicationContext(), "Clocked in successfully!", Toast.LENGTH_SHORT).show();
             System.out.println("Clocked in successfully!");
+            System.out.println(currentDateTimeString);
             punchCoin = 1;
         } else {
             Toast.makeText(getApplicationContext(), "Please clock out first!", Toast.LENGTH_SHORT).show();
@@ -57,7 +58,7 @@ public class UserActivity2 extends AppCompatActivity{
 
     public void clockOut (View view){
         if (punchCoin == 1) {
-            currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+            currentDateTimeString = System.currentTimeMillis();
             user.punches.add(currentDateTimeString);
             Toast.makeText(getApplicationContext(), "Clocked out successfully!", Toast.LENGTH_SHORT).show();
             System.out.println("Clocked in successfully!");

@@ -32,6 +32,15 @@ public class ShowPunches extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView);
 
+        TextView usernameTitle = (TextView) findViewById(R.id.showPunchUsername);
+        usernameTitle.setText(user.getUser());
+
+        TextView hoursTitle = (TextView) findViewById(R.id.showPunchHours);
+        hoursTitle.setText(user.getHours());
+
+        TextView minutesTitle = (TextView) findViewById(R.id.showPunchMinutes);
+        minutesTitle.setText(user.getMinutes());
+
         listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, user.punches);
         listView.setAdapter(listAdapter);
     }
